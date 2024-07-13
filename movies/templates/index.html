@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Movies{% endblock title %}
+{% block content %}
+    <p class="display-6 py-4 text-white">Selecciona una película:</p>
+    <ul class="list-group">
+        {% for movie in movies %}
+        <li class="list-group-item list-group-item-dark py-4">
+            <a  class= "text-success" href="movie/{{movie.id}}">{{ movie | capfirst }} - {{movie.publication_year}}</a>
+        </li>
+            {% endfor %}
+    </ul>
+    {% endblock content %}
